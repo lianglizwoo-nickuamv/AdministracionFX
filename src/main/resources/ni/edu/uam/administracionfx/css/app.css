@@ -1,0 +1,67 @@
+.root {
+    -fx-font-size: 13px;
+}
+
+.titulo {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.subtitulo {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4b5563;
+}
+
+.barra {
+    -fx-background-color: #1f3a5f;
+}
+
+.barra .label {
+    -fx-text-fill: white;
+}
+
+.panel-form {
+    -fx-background-color: #f3f4f6;
+}
+
+.error {
+    -fx-text-fill: #dc2626;
+}
+
+.boton-primario {
+    -fx-background-color: #2563eb;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.boton-primario:hover {
+    -fx-background-color: #1d4ed8;
+}
+
+.boton-peligro {
+    -fx-background-color: #dc2626;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.boton-peligro:hover {
+    -fx-background-color: #b91c1c;
+}
+
+.boton-peligro:disabled {
+    -fx-opacity: 0.45;
+}
+
+.tarjeta {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-background-color: #e8eefc;
+    -fx-text-fill: #1f3a5f;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+}
+
+.tarjeta:hover {
+    -fx-background-color: #d3e0fb;
+}

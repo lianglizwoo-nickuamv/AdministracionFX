@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ni.edu.uam.administracionfx.controller.EstudianteController">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="barra">
+            <padding>
+                <Insets top="12.0" right="16.0" bottom="12.0" left="16.0"/>
+            </padding>
+            <Button text="← Volver" onAction="#onVolver"/>
+            <Label text="Gestión de estudiantes" styleClass="titulo"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lblTotal"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="10.0">
+            <padding>
+                <Insets top="16.0" right="16.0" bottom="16.0" left="16.0"/>
+            </padding>
+            <TextField fx:id="txtBuscar" promptText="Buscar por carnet, nombre, correo o carrera..."/>
+            <TableView fx:id="tablaEstudiantes" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colCarnet" text="Carnet" prefWidth="100.0"/>
+                    <TableColumn fx:id="colNombre" text="Nombre completo" prefWidth="230.0"/>
+                    <TableColumn fx:id="colCorreo" text="Correo" prefWidth="190.0"/>
+                    <TableColumn fx:id="colTelefono" text="Teléfono" prefWidth="100.0"/>
+                    <TableColumn fx:id="colCarrera" text="Carrera" prefWidth="160.0"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <right>
+        <VBox spacing="14.0" prefWidth="360.0" styleClass="panel-form">
+            <padding>
+                <Insets top="16.0" right="16.0" bottom="16.0" left="16.0"/>
+            </padding>
+            <Label fx:id="lblModo" styleClass="titulo"/>
+
+            <GridPane hgap="10.0" vgap="4.0">
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="50.0"/>
+                    <ColumnConstraints percentWidth="50.0"/>
+                </columnConstraints>
+
+                <Label text="Carnet *" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+                <TextField fx:id="txtCarnet" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+
+                <Label text="Primer nombre *" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                <Label text="Segundo nombre" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <TextField fx:id="txtPrimerNombre" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                <TextField fx:id="txtSegundoNombre" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+                <Label text="Primer apellido *" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                <Label text="Segundo apellido" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <TextField fx:id="txtPrimerApellido" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+                <TextField fx:id="txtSegundoApellido" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+
+                <Label text="Correo" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="2"/>
+                <TextField fx:id="txtCorreo" GridPane.columnIndex="0" GridPane.rowIndex="7" GridPane.columnSpan="2"/>
+
+                <Label text="Teléfono" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+                <Label text="Carrera" GridPane.columnIndex="1" GridPane.rowIndex="8"/>
+                <TextField fx:id="txtTelefono" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+                <TextField fx:id="txtCarrera" GridPane.columnIndex="1" GridPane.rowIndex="9"/>
+            </GridPane>
+
+            <HBox spacing="8.0">
+                <Button text="Guardar" styleClass="boton-primario" onAction="#onGuardar"/>
+                <Button text="Nuevo" onAction="#onNuevo"/>
+                <Button fx:id="btnEliminar" text="Eliminar" styleClass="boton-peligro" onAction="#onEliminar"/>
+            </HBox>
+        </VBox>
+    </right>
+</BorderPane>
